@@ -1,35 +1,35 @@
-def mergeSort(ages):
-    if len(ages) > 1:
-        middleIndex = len(ages) // 2
+def mergeSort(arr):
+    if len(arr) > 1:
+        middleIndex = len(arr) // 2
 
         # Divide the array into two halves
-        leftAges = ages[:middleIndex]
-        rightAges = ages[middleIndex:]
+        leftHalf = arr[:middleIndex]
+        rightHalf = arr[middleIndex:]
 
         # Recursively sort the two halves
-        mergeSort(leftAges)
-        mergeSort(rightAges)
+        mergeSort(leftHalf)
+        mergeSort(rightHalf)
 
         # Merging the sorted halves
         i = j = k = 0
 
-        while i < len(leftAges) and j < len(rightAges):
-            if leftAges[i] < rightAges[j]:
-                ages[k] = leftAges[i]
+        while i < len(leftHalf) and j < len(rightHalf):
+            if leftHalf[i] < rightHalf[j]:
+                arr[k] = leftHalf[i]
                 i += 1
             else:
-                ages[k] = rightAges[j]
+                arr[k] = rightHalf[j]
                 j += 1
             k += 1
 
-        # Checking if any element was left in leftAges
-        while i < len(leftAges):
-            ages[k] = leftAges[i]
+        # Checking if any element was left in leftHalf
+        while i < len(leftHalf):
+            arr[k] = leftHalf[i]
             i += 1
             k += 1
 
-        # Checking if any element was left in rightAges
-        while j < len(rightAges):
-            ages[k] = rightAges[j]
+        # Checking if any element was left in rightHalf
+        while j < len(rightHalf):
+            arr[k] = rightHalf[j]
             j += 1
             k += 1
