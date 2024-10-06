@@ -1,5 +1,6 @@
 import mergeSort
 import insertionSort
+import selectionSort
 import pandas as pd
 import numpy as np
 import math
@@ -35,5 +36,12 @@ print(f"Total insertion sort time: {totalTime} seconds")
 # Bubble sort
 
 # Selection sort
+
+start = time.time()
+print("Running selection sort on data")
+selectionSort.selectionSort(ages)
+end = time.time()
+totalTime = round((end - start), 5)
+print(f"Total selection sort time: {totalTime} seconds")
 
 # Quicksort

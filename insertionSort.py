@@ -1,4 +1,4 @@
-import swap
+import utils.swap as swap
 
 def insertionSort(arr):
     for i in range(1, len(arr)):
